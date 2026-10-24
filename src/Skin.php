@@ -41,7 +41,7 @@ final class Skin
     public static function input(?string $class = null): string
     {
         return self::cn('h-10 w-full min-w-0 rounded bg-background px-3 text-base text-foreground inset-ring inset-ring-input outline-none md:text-sm',
-            'placeholder:text-muted-foreground focus-visible:inset-ring-ring disabled:cursor-not-allowed disabled:opacity-50', $class);
+            'focus-visible:inset-ring-ring disabled:cursor-not-allowed disabled:opacity-50', $class);
     }
 
     public static function label(?string $class = null): string
