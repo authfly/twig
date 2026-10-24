@@ -9,7 +9,7 @@ Composer package `authfly/twig`. Primitives from `npx ui8kit@3` (CLI 3.2.1, regi
 `ui/` (templates) and `runtime/` (`UI8Kit\Twig\*`) are CLI-owned — never edit; `npx ui8kit@3 check`.
 Authfly layer: `src/Skin.php` + `src/AuthflyExtension.php` (`af_*` functions), `authfly/components.html.twig`
 (macros: card, stack, group, form, hidden, title, alert, badge, icon_badge, field, icon, head, messages),
-`blocks/authfly-*.html.twig` (same `p` props as the xgen templates).
+`blocks/authfly-*.html.twig` (same `p` props as the React widgets).
 
     $twig->addExtension(new UI8Kit\Twig\TwigExtension());
     $twig->addExtension(new Authfly\Twig\AuthflyExtension());
