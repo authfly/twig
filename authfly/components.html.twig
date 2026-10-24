@@ -31,13 +31,9 @@
 {{ include('ui/form/Form.html.twig', {action: action, method: 'post', class: af_cn('grid gap-4', class), attrs: af_attrs(attrs ?? {}), children: children}, with_context = false) }}
 {%- endmacro -%}
 
-{#- hidden: value always emitted (an empty value goes through attrs, the primitive drops value=""). -#}
+{#- hidden: value always emitted, an empty one included (the primitive omits only null). -#}
 {%- macro hidden(name, value) -%}
-{%- if value is same as('') or value is null -%}
-{{ include('ui/input/Input.html.twig', {type: 'hidden', name: name, attrs: {value: ''}}, with_context = false) }}
-{%- else -%}
-{{ include('ui/input/Input.html.twig', {type: 'hidden', name: name, value: value}, with_context = false) }}
-{%- endif -%}
+{{ include('ui/input/Input.html.twig', {type: 'hidden', name: name, value: value ?? ''}, with_context = false) }}
 {%- endmacro -%}
 
 {%- macro title(level, id, role, title) -%}
