@@ -63,7 +63,7 @@
 {%- macro field(f) -%}
 {%- set hintId = f.hint ?? '' ? f.for ~ '-hint' : null -%}
 {%- set errId = f.error ?? '' ? f.for ~ '-error' : null -%}
-{%- set wired = (f.input|default({}))|merge({id: f.for, class: af_skin('input'), ariaDescribedBy: af_describe(f.describe ?? null, hintId, errId, f.formError ?? null) ?? '', ariaInvalid: ((f.error ?? '') or (f.formError ?? '')) ? 'true' : '', attrs: af_attrs((f.input.attrs ?? {})|merge({'data-testid': 'field'}))}) -%}
+{%- set wired = (f.input|default({}))|merge({id: f.for, class: af_skin('input'), ariaDescribedBy: af_describe(f.describe ?? null, hintId, errId, f.formError ?? null), ariaInvalid: ((f.error ?? '') or (f.formError ?? '')) ? 'true' : null, attrs: af_attrs((f.input.attrs ?? {})|merge({'data-testid': 'field'}))}) -%}
 {%- set ctl -%}{{ include('ui/input/Input.html.twig', wired, with_context = false) }}{%- endset -%}
 {%- if f.suffix ?? '' -%}{%- set ctl = _self.group('2', '', '', '', {}, ctl ~ f.suffix) -%}{%- endif -%}
 {%- set lbl -%}{{ include('ui/label/Label.html.twig', {htmlFor: f.for, class: af_skin('label'), children: af_esc(f.label)}, with_context = false) }}{%- endset -%}

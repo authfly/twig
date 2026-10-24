@@ -1,6 +1,6 @@
 {
   "name": "authfly/twig",
-  "description": "Authfly widgets for Twig on UI8Kit 3 primitives (CLI 3.2.1, registry 3.2.0).",
+  "description": "Authfly widgets for Twig on UI8Kit 3 primitives (CLI 3.2.1, registry 3.2.2).",
   "type": "library",
   "homepage": "https://github.com/authfly/authkit",
   "license": "MIT",
