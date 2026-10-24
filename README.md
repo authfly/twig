@@ -1,5 +1,7 @@
 # Authfly widgets — Twig (UI8Kit 3)
 
+> **Read-only mirror:** [authfly/twig](https://github.com/authfly/twig) is a read-only mirror of `packages/ui/twig`; develop in [authfly/authkit](https://github.com/authfly/authkit) (`tools/split.sh`).
+
 Composer package `authfly/twig`. Primitives from `npx ui8kit@3` (CLI 3.2.1, registry 3.2.0):
 
     npx ui8kit@3 init --yes --framework twig --runtime twig --dir . --registry-version 3.2.0
