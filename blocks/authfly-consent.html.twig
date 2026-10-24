@@ -20,4 +20,4 @@
 {{- af.stack('2', '', '', '', {}, scopes) }}
 {{- af.group('2', '', 'between', '', {}, row) }}
 {%- endset -%}
-{{ af.card('', {'data-testid': 'authfly-consent', 'data-client': p.client ?? null}|merge({'aria-labelledby': (p.landmarkLabel ?? '') ? null : id ~ '-title', 'aria-label': p.landmarkLabel ?? null}), body) }}
+{{ af.card(af_skin('widgetCard'), {'data-testid': 'authfly-consent', 'data-client': p.client ?? null}|merge({'aria-labelledby': (p.landmarkLabel ?? '') ? null : id ~ '-title', 'aria-label': p.landmarkLabel ?? null}), body) }}

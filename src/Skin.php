@@ -63,10 +63,20 @@ final class Skin
             $class);
     }
 
+    /** Alert tones recolour text + ring on the shared bg-muted surface (unknown tone = default). */
+    public const ALERT_TONE = [
+        'default' => 'text-foreground inset-ring-border',
+        'success' => 'text-success inset-ring-success',
+        'warning' => 'text-warning inset-ring-warning',
+        'destructive' => 'text-destructive inset-ring-destructive',
+    ];
+
+    /** tone default|success|warning|destructive. Alert is a block, not a control: 8px layout step, py-2 px-4
+     *  (one text-xs line + py-2 = the old min-h-8, so a one-line alert keeps its 32px height). */
     public static function alert(string $tone = 'default', ?string $class = null): string
     {
-        return self::cn('flex min-h-8 items-center gap-2 rounded bg-muted px-2 text-xs font-semibold inset-ring',
-            $tone === 'destructive' ? 'text-destructive inset-ring-destructive' : 'text-foreground inset-ring-border', $class);
+        return self::cn('flex min-h-8 items-start gap-2 rounded bg-muted px-4 py-2 text-xs font-semibold inset-ring',
+            self::ALERT_TONE[$tone] ?? self::ALERT_TONE['default'], $class);
     }
 
     public static function iconBadge(string $tone = 'default', ?string $class = null): string
@@ -75,9 +85,16 @@ final class Skin
             $tone === 'destructive' ? 'bg-muted text-destructive inset-ring-destructive' : 'bg-muted text-muted-foreground inset-ring-transparent', $class);
     }
 
+    /** Card surface only (no width, no centring): consumers place it in their own layout. */
     public static function card(?string $class = null): string
     {
-        return self::cn('mx-auto flex w-full max-w-sm flex-col gap-6 rounded bg-card p-6 text-card-foreground inset-ring inset-ring-border', $class);
+        return self::cn('flex w-full flex-col gap-6 rounded bg-card p-6 text-card-foreground inset-ring inset-ring-border', $class);
+    }
+
+    /** Width + centring of the six Authfly widgets, passed to card as its class (account: max-w-lg). */
+    public static function widgetCard(?string $class = null): string
+    {
+        return self::cn('mx-auto max-w-sm', $class);
     }
 
     /** Lucide glyph inner SVG markup (static, trusted data); unknown names fall back to "circle". */

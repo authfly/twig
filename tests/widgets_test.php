@@ -30,5 +30,11 @@ foreach (json_decode(file_get_contents(__DIR__ . '/../../react/tests/states.json
 }
 $h = $twig->render($file('AuthflySignIn'), ['p' => ['id' => 'x', 'title' => '<b>t</b>', 'error' => '<img src=x onerror=alert(1)>', 'labels' => ['submit' => 'Go', 'forgot' => '<i>']]]);
 $check('escape', !str_contains($h, '<img') && !str_contains($h, '<b>') && !str_contains($h, '<i>'));
+// skin: alert tones are tokens on bg-muted with block padding; the card surface has no width, the widgets add it.
+$S = 'Authfly\\Twig\\Skin';
+foreach (['success', 'warning', 'destructive'] as $t) $check("alert $t", str_contains($S::alert($t), "text-$t inset-ring-$t") && str_contains($S::alert($t), 'bg-muted px-4 py-2'));
+$check('alert default', str_contains($S::alert('default'), 'text-foreground inset-ring-border'));
+$check('card surface', !preg_match('/mx-auto|max-w-/', $S::card()));
+$check('widget card', str_contains($S::card($S::widgetCard()), 'mx-auto max-w-sm') && str_contains($S::card($S::widgetCard('max-w-lg')), 'mx-auto max-w-lg'));
 echo "$pass passed, $fail failed\n";
 exit($fail ? 1 : 0);

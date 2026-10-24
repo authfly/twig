@@ -23,4 +23,4 @@
 {{- af.stack('2', '', '', '', {}, methods) }}
 {{- af.form(p.signoutUrl ?? '', '', {'data-testid': 'signout-form'}, signout) }}
 {%- endset -%}
-{{ af.card('max-w-lg', {'data-testid': 'authfly-account'}|merge({'aria-labelledby': (p.landmarkLabel ?? '') ? null : id ~ '-title', 'aria-label': p.landmarkLabel ?? null}), body) }}
+{{ af.card(af_skin('widgetCard', 'max-w-lg'), {'data-testid': 'authfly-account'}|merge({'aria-labelledby': (p.landmarkLabel ?? '') ? null : id ~ '-title', 'aria-label': p.landmarkLabel ?? null}), body) }}

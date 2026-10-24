@@ -15,4 +15,4 @@
 {%- endif -%}
 {%- if l.secondary ?? '' %}{{ af.link(l.secondaryHref ?? '', af_skin('link', 'text-sm'), 'secondary', l.secondary) }}{% endif -%}
 {%- endset -%}
-{{ af.card('items-center text-center', {'data-testid': 'authfly-notice', 'data-tone': tone}|merge({'aria-labelledby': (p.landmarkLabel ?? '') ? null : id ~ '-title', 'aria-label': p.landmarkLabel ?? null}), body) }}
+{{ af.card(af_skin('widgetCard', 'items-center text-center'), {'data-testid': 'authfly-notice', 'data-tone': tone}|merge({'aria-labelledby': (p.landmarkLabel ?? '') ? null : id ~ '-title', 'aria-label': p.landmarkLabel ?? null}), body) }}

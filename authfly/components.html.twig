@@ -78,7 +78,7 @@
 
 {%- macro messages(id, error, info) -%}
 {%- if error %}{{ _self.alert('destructive', 'circle-alert', id ~ '-error', 'authfly-error', af_esc(error)) }}{% endif -%}
-{%- if info %}{{ _self.alert('success', 'info', '', 'authfly-info', af_esc(info)) }}{% endif -%}
+{%- if info %}{{ _self.alert('default', 'info', '', 'authfly-info', af_esc(info)) }}{% endif -%}
 {%- endmacro -%}
 
 {%- macro link(href, class, testid, label) -%}

@@ -23,4 +23,4 @@
 {{- af.form(p.action ?? '', '', {'data-testid': 'authfly-form'}, form) }}
 {%- if l.back ?? '' %}{{ af.link(l.backHref ?? '', af_skin('link', 'w-fit text-sm'), 'back', l.back) }}{% endif -%}
 {%- endset -%}
-{{ af.card('', {'data-testid': 'authfly-request'}|merge({'aria-labelledby': (p.landmarkLabel ?? '') ? null : id ~ '-title', 'aria-label': p.landmarkLabel ?? null}), body) }}
+{{ af.card(af_skin('widgetCard'), {'data-testid': 'authfly-request'}|merge({'aria-labelledby': (p.landmarkLabel ?? '') ? null : id ~ '-title', 'aria-label': p.landmarkLabel ?? null}), body) }}
