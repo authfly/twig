@@ -8,7 +8,7 @@ use UI8Kit\Twig\Rt;
 
 final class Skin
 {
-    // Class recipes of packages/shared/src/skin/recipes.ts (tables generated into SkinRecipes.php by tools/gen-shared.ts).
+    // Class recipes of packages/shared/src/skin/recipes.ts (tables generated into SkinRecipes.php by authfly/codegen shared).
     public const TEXT = SkinRecipes::TEXT;
     public const GAP = SkinRecipes::GAP;
     public const ALIGN = SkinRecipes::ALIGN;
