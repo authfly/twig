@@ -3,7 +3,7 @@
   "description": "Authfly widgets for Twig on UI8Kit 3 primitives (CLI 3.2.1, registry 3.3.0).",
   "type": "library",
   "homepage": "https://github.com/authfly/authkit",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "require": {
     "php": ">=8.2",
     "twig/twig": "^3.0"
