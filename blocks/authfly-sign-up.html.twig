@@ -12,7 +12,7 @@
 {{- af.field({label: l.password ?? '', for: id ~ '-password', hint: l.hint ?? '', formError: formError, input: {type: 'password', name: 'password', required: true, attrs: {autocomplete: 'new-password'}}}) }}
 {%- if (p.terms ?? 'show') == 'show' -%}
 {%- set t -%}
-{{ include('ui/checkbox/Checkbox.html.twig', {name: 'terms', required: true, id: id ~ '-terms', class: af_skin('checkbox')}, with_context = false) }}
+{{ include('ui/checkbox/Checkbox.html.twig', {name: 'terms', required: true, id: id ~ '-terms', ariaDescribedBy: formError, ariaInvalid: formError ? 'true' : null, class: af_skin('checkbox')}, with_context = false) }}
 {{- include('ui/label/Label.html.twig', {htmlFor: id ~ '-terms', class: af_skin('label', 'font-normal'), children: af_esc(l.terms ?? '')}, with_context = false) }}
 {%- endset -%}
 {{ af.group('2', '', '', 'w-fit', {}, t) }}
